@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蓝空新芽 BLUE SPROUT · 2026暑期支教招募</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body {
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#e8ecf1;
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;padding:20px;
+}
+
+.poster {
+  width:794px;height:1123px;
+  background:linear-gradient(180deg,#eaf2fc 0%,#f6f8fb 30%,#ffffff 60%,#eaf2fc 100%);
+  position:relative;overflow:hidden;
+  box-shadow:0 16px 64px rgba(10,38,71,0.18);
+  border-radius:4px;
+}
+
+/* ============ 装饰背景 ============ */
+.bg-circle {
+  position:absolute;border-radius:50%;
+  opacity:0.07;
+}
+.c1{width:520px;height:520px;top:-260px;right:-100px;background:#1d6dd9;}
+.c2{width:380px;height:380px;top:200px;left:-150px;background:#4ba3f0;}
+.c3{width:240px;height:240px;bottom:80px;right:-60px;background:#f7d747;}
+.c4{width:160px;height:160px;bottom:60px;left:450px;background:#4ba3f0;opacity:0.04;}
+
+/* 顶部彩色带 */
+.top-ribbon {
+  position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,#0a2647,#1d6dd9,#4ba3f0,#f7d747);
+}
+
+/* 左侧装饰竖条 */
+.side-accent {
+  position:absolute;top:0;left:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,#1d6dd9 0%,#4ba3f0 40%,#f7d747 100%);
+  opacity:0.3;
+}
+
+/* 顶部区域 */
+.header-zone {
+  position:relative;z-index:2;
+  padding:48px 56px 0;
+}
+
+.header-top {
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:28px;
+}
+
+.tiny-logo {
+  width:42px;height:42px;
+  background:linear-gradient(135deg,#1d6dd9,#4ba3f0);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:#fff;
+  box-shadow:0 4px 16px rgba(29,109,217,0.3);
+}
+
+.header-meta {
+  font-size:13px;color:#3d5a80;
+  letter-spacing:1px;font-weight:500;
+  line-height:1.5;
+}
+
+.header-meta .buaa {
+  font-size:15px;font-weight:700;color:#0a2647;
+  display:block;
+}
+
+.eng-tag {
+  font-family:monospace;
+  font-size:11px;color:#4ba3f0;
+  letter-spacing:3px;
+  margin-left:auto;
+  align-self:flex-start;
+  padding-top:4px;
+}
+
+/* 主标题 */
+.hero-title-block {
+  position:relative;
+  margin-bottom:16px;
+}
+
+.hero-title {
+  font-family:"Noto Serif SC",serif;
+  font-size:76px;font-weight:900;
+  color:#0a2647;
+  line-height:1;
+  letter-spacing:6px;
+}
+
+.hero-title .accent {
+  color:#1d6dd9;
+  position:relative;
+  display:inline-block;
+}
+
+.hero-title .accent::after {
+  content:'';
+  position:absolute;bottom:6px;left:4px;right:4px;height:14px;
+  background:#f7d747;opacity:0.45;z-index:-1;
+  border-radius:4px;
+}
+
+.hero-sub {
+  font-size:28px;font-weight:700;color:#1d6dd9;
+  margin-top:4px;letter-spacing:2px;
+}
+
+.hero-slogan {
+  font-size:15px;color:#3d5a80;
+  line-height:1.9;
+  max-width:500px;
+  margin-top:18px;
+  padding:18px 20px;
+  border-left:3px solid #4ba3f0;
+  background:rgba(75,163,240,0.04);
+  border-radius:0 12px 12px 0;
+}
+
+.hero-slogan strong {
+  color:#1d6dd9;
+  font-weight:700;
+}
+
+/* 标签行 */
+.tag-row {
+  display:flex;gap:10px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.tag {
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;font-weight:500;
+  letter-spacing:0.5px;
+}
+
+.tag.ai {
+  background:rgba(29,109,217,0.1);
+  color:#1d6dd9;border:1px solid rgba(29,109,217,0.2);
+}
+.tag.edu {
+  background:rgba(102,187,106,0.1);
+  color:#388e3c;border:1px solid rgba(102,187,106,0.2);
+}
+.tag.pbl {
+  background:rgba(171,71,188,0.1);
+  color:#7b1fa2;border:1px solid rgba(171,71,188,0.2);
+}
+.tag.loc {
+  background:rgba(255,167,38,0.1);
+  color:#e65100;border:1px solid rgba(255,167,38,0.2);
+}
+
+/* 分隔线 */
+.divider {
+  margin:30px 56px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(29,109,217,0.15),transparent);
+}
+
+/* 主体内容区 */
+.main-body {
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:32px;
+  padding:0 56px 0;
+}
+
+/* 左侧 */
+.left-col h3 {
+  font-size:16px;color:#0a2647;
+  margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+  font-weight:700;
+}
+
+.left-col h3::before {
+  content:'';
+  width:16px;height:4px;
+  background:linear-gradient(90deg,#f7d747,#ffb84a);
+  border-radius:2px;
+}
+
+.course-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.course-card {
+  background:#fff;
+  border-radius:14px;
+  padding:14px 12px;
+  text-align:center;
+  border:1px solid #e8f0fc;
+  transition:all 0.2s;
+  box-shadow:0 2px 8px rgba(29,109,217,0.04);
+}
+
+.course-card .emoji {
+  font-size:26px;margin-bottom:6px;
+}
+
+.course-card .name {
+  font-size:13px;font-weight:700;color:#0a2647;
+  margin-bottom:5px;
+}
+
+.course-card .desc {
+  font-size:11px;color:#5a7a9a;
+  line-height:1.5;
+}
+
+/* AI 亮点条 */
+.ai-bar {
+  background:linear-gradient(135deg,#0a2647,#1d6dd9);
+  border-radius:16px;
+  padding:20px 22px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.ai-bar::after {
+  content:'';
+  position:absolute;
+  top:-30px;right:-30px;
+  width:120px;height:120px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+}
+
+.ai-bar .ai-label {
+  font-size:10px;letter-spacing:3px;
+  opacity:0.7;margin-bottom:8px;
+  font-family:monospace;
+}
+
+.ai-bar .ai-title {
+  font-size:16px;font-weight:700;
+  line-height:1.5;margin-bottom:6px;
+  position:relative;z-index:1;
+}
+
+.ai-bar .ai-desc {
+  font-size:12px;opacity:0.85;
+  line-height:1.7;
+  position:relative;z-index:1;
+}
+
+/* 右侧 */
+.right-col {
+  display:flex;flex-direction:column;gap:18px;
+}
+
+.info-panel {
+  background:#fff;
+  border-radius:16px;
+  padding:22px 24px;
+  border:1px solid #e8f0fc;
+  box-shadow:0 4px 16px rgba(29,109,217,0.05);
+}
+
+.info-panel h4 {
+  font-size:14px;color:#1d6dd9;
+  margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+  font-weight:700;
+}
+
+.info-row {
+  display:flex;justify-content:space-between;
+  align-items:center;
+  padding:9px 0;
+  border-bottom:1px solid #f0f4f9;
+}
+
+.info-row:last-child{border-bottom:none;}
+
+.info-key {
+  font-size:12px;color:#6b8aa8;
+  font-weight:400;
+}
+
+.info-val {
+  font-size:14px;font-weight:700;color:#0a2647;
+  text-align:right;
+}
+
+.info-val.highlight {
+  color:#1d6dd9;
+  font-size:15px;
+}
+
+/* 二维码区域 */
+.qr-area {
+  display:flex;gap:16px;
+}
+
+.qr-panel {
+  flex:1;
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+  border:1px solid #e8f0fc;
+  box-shadow:0 4px 16px rgba(29,109,217,0.05);
+}
+
+.qr-panel img {
+  width:100px;height:100px;
+  border-radius:10px;
+  margin-bottom:8px;
+  object-fit:cover;
+}
+
+.qr-panel .title {
+  font-size:13px;font-weight:700;color:#0a2647;
+  margin-bottom:3px;
+}
+
+.qr-panel .hint {
+  font-size:10px;color:#8aa8c8;
+}
+
+/* 底部区域 */
+.footer-zone {
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 56px 36px;
+  text-align:center;
+  background:linear-gradient(180deg,transparent 0%,rgba(29,109,217,0.03) 40%,rgba(29,109,217,0.06) 100%);
+  z-index:2;
+}
+
+.footer-quote {
+  font-family:"Noto Serif SC",serif;
+  font-size:22px;color:#0a2647;
+  font-weight:600;
+  margin-bottom:6px;
+  letter-spacing:2px;
+}
+
+.footer-sub {
+  font-size:12px;color:#5a7a9a;
+  margin-bottom:16px;
+}
+
+.footer-url {
+  display:inline-block;
+  background:#0a2647;
+  color:#fff;
+  padding:10px 28px;
+  border-radius:24px;
+  font-size:13px;
+  font-family:monospace;
+  letter-spacing:1px;
+  box-shadow:0 4px 16px rgba(10,38,71,0.2);
+}
+
+/* 漂浮装饰 */
+.float-dot {
+  position:absolute;border-radius:50%;
+  opacity:0.8;
+}
+.fd1{top:120px;right:40px;width:6px;height:6px;background:#f7d747;}
+.fd2{top:140px;right:60px;width:4px;height:4px;background:#4ba3f0;}
+.fd3{top:110px;right:70px;width:8px;height:8px;background:#1d6dd9;opacity:0.5;}
+
+/* 时间线装饰 */
+.timeline-dots {
+  position:absolute;top:490px;right:40px;
+  display:flex;flex-direction:column;gap:8px;align-items:center;
+}
+.timeline-dots .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#1d6dd9;opacity:0.25;
+}
+.timeline-dots .dot.active{
+  width:10px;height:10px;opacity:0.6;
+  box-shadow:0 0 8px rgba(29,109,217,0.3);
+}
+
+@media print {
+  body{background:#fff;padding:0}
+  .poster{box-shadow:none;border-radius:0}
+}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="top-ribbon"></div>
+  <div class="side-accent"></div>
+  
+  <!-- 背景装饰圆 -->
+  <div class="bg-circle c1"></div>
+  <div class="bg-circle c2"></div>
+  <div class="bg-circle c3"></div>
+  <div class="bg-circle c4"></div>
+  
+  <!-- 浮动小点 -->
+  <div class="float-dot fd1"></div>
+  <div class="float-dot fd2"></div>
+  <div class="float-dot fd3"></div>
+
+  <!-- 头部 -->
+  <div class="header-zone">
+    <div class="header-top">
+      <div class="tiny-logo">🌱</div>
+      <div class="header-meta">
+        <span class="buaa">北京航空航天大学</span>
+        2026 暑期社会实践招募
+      </div>
+      <div class="eng-tag">BLUE<br>SPROUT</div>
+    </div>
+
+    <div class="hero-title-block">
+      <div class="hero-title">蓝空<span class="accent">新芽</span></div>
+      <div class="hero-sub">一起把好教育种进泥土里</div>
+    </div>
+
+    <div class="hero-slogan">
+      <strong>AI 时代，学习的逻辑已经彻底变了。</strong><br>
+      记忆不再是门槛，提问能力、思维能力和信息素养才是核心竞争力。<br>
+      2026 夏天，和我们一起用创新教育走进乡镇中学。
+    </div>
+
+    <div class="tag-row">
+      <span class="tag ai">🤖 AI 赋能</span>
+      <span class="tag edu">🌱 五育融合</span>
+      <span class="tag pbl">📐 PBL 项目式学习</span>
+      <span class="tag loc">🏫 山东 · 乡镇中学</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 主体 -->
+  <div class="main-body">
+    <div class="left-col">
+      <h3>五育融合课程体系</h3>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="emoji">🤖</div>
+          <div class="name">智育</div>
+          <div class="desc">无人机科普<br>AI学习工坊<br>编程启蒙</div>
+        </div>
+        <div class="course-card">
+          <div class="emoji">🌱</div>
+          <div class="name">劳育</div>
+          <div class="desc">田园实践<br>生活技能课<br>手工制作</div>
+        </div>
+        <div class="course-card">
+          <div class="emoji">⚡</div>
+          <div class="name">体育</div>
+          <div class="desc">趣味运动<br>团队拓展<br>户外挑战</div>
+        </div>
+        <div class="course-card">
+          <div class="emoji">🎨</div>
+          <div class="name">美育</div>
+          <div class="desc">自然创作<br>AI艺术设计<br>音乐绘画</div>
+        </div>
+        <div class="course-card">
+          <div class="emoji">❤️</div>
+          <div class="name">德育</div>
+          <div class="desc">榜样故事<br>感恩成长<br>团队协作</div>
+        </div>
+        <div class="course-card">
+          <div class="emoji">🎯</div>
+          <div class="name">PBL项目</div>
+          <div class="desc">所有队员参与<br>课程设计<br>教学实践</div>
+        </div>
+      </div>
+
+      <div class="ai-bar">
+        <div class="ai-label">★ AI EMPOWERED LEARNING</div>
+        <div class="ai-title">不是教孩子用 AI 抄答案，<br>而是教他们用 AI 问出更好的问题。</div>
+        <div class="ai-desc">从「如何提问」到「如何验证」，让 AI 成为认识世界的伙伴，而不是替代思考的拐杖。</div>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <div class="info-panel">
+        <h4>📅 实践安排</h4>
+        <div class="info-row">
+          <span class="info-key">时间</span>
+          <span class="info-val">2026.7 中旬 – 8 月初</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">时长</span>
+          <span class="info-val">两周 · 沉浸式陪伴</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">地点</span>
+          <span class="info-val">山东省 · 乡镇中学</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">主办</span>
+          <span class="info-val">北航蓝空新芽实践队</span>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h4>👋 我们在找这样的你</h4>
+        <div class="info-row">
+          <span class="info-key">热情</span>
+          <span class="info-val">对教育感兴趣，愿意尝试</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">责任心</span>
+          <span class="info-val">认真负责，有团队意识</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">创新</span>
+          <span class="info-val">有特长或想法，愿意分享</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">经验</span>
+          <span class="info-val">零基础欢迎 · 出发前培训</span>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h4>📞 加入方式</h4>
+        <div class="info-row">
+          <span class="info-key">联系人</span>
+          <span class="info-val highlight">15523090410</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">微信备注</span>
+          <span class="info-val">「实践队+姓名」</span>
+        </div>
+      </div>
+
+      <div class="qr-area">
+        <div class="qr-panel">
+          <img src="qrcode.png" alt="交流群二维码">
+          <div class="title">招新交流群</div>
+          <div class="hint">扫码加入获取最新信息</div>
+        </div>
+        <div class="qr-panel" style="position:relative;">
+          <img src="qrcode.png" alt="负责人微信">
+          <div class="title">负责人微信</div>
+          <div class="hint">扫码添加联系负责人</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-zone">
+    <div class="footer-quote">嘤其鸣矣，求其友声</div>
+    <div class="footer-sub">一起在土地、课堂与创作中，遇见更好的自己</div>
+    <div class="footer-url">lxs-lab.github.io/blue-sprout</div>
+  </div>
+</div>
+</body>
+</html>
